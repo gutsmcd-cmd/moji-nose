@@ -1,0 +1,27 @@
+
+:root { --acc: #BE185D; --acc-ink: #fff; --paper: #fff5f8; }
+@media (prefers-color-scheme: dark) { :root { --paper: #1a1216; } }
+body { background: var(--paper); }
+.drop {
+  border: 2px dashed color-mix(in srgb, var(--acc) 50%, var(--line));
+  border-radius: 16px; min-height: 220px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 10px; padding: 18px; text-align: center; background: var(--card);
+}
+.drop.over { background: color-mix(in srgb, var(--acc) 12%, var(--card)); }
+.stage { position: relative; border-radius: 16px; overflow: hidden; background: #111; touch-action: manipulation; }
+.stage img { display: block; width: 100%; height: auto; pointer-events: none; }
+.tbox {
+  position: absolute; transform: translate(-50%, -50%);
+  white-space: nowrap; touch-action: none; user-select: none;
+  padding: 2px 4px; cursor: grab; line-height: 1.2;
+  text-shadow: 0 1px 2px rgba(0,0,0,.55);
+  max-width: 96%;
+}
+.tbox.on { outline: 3px solid var(--acc); outline-offset: 2px; border-radius: 4px; }
+.swatches { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.swatch { width: 42px; height: 42px; border-radius: 12px; border: 2px solid var(--line); padding: 0; }
+.swatch.on { outline: 3px solid var(--acc); outline-offset: 2px; }
+input[type='color'].swatch { padding: 0; }
+
+.stage.over { box-shadow: inset 0 0 0 3px var(--acc); }
