@@ -24,7 +24,7 @@ const ja = {
 };
 export type Dict = typeof ja;
 const en: Dict = {
-  app: 'Moji Nose',
+  app: 'Text on Photo',
   sub: 'Text on a photo. Nothing is uploaded. Horizontal text only.',
   pick: 'Choose image',
   drop: 'Drop an image here',
